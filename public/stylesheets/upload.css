@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+
+#element {
+
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+p{
+    color: cornflowerblue;
+    font-size:80px;
+    width:600px;
+    display:inline-block;
+}
+
+label{
+    color: cornflowerblue;
+    font-size:30px;
+    width:150px;
+    display:inline-block;
+}
+#bm button{
+    margin:20px 0px 0px 0px;
+}
+.btn {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #7B68EE;
+    color: white;
+}

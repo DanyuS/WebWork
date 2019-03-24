@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>AddItem</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pictureIntro.css">
+</head>
+
+<body>
+<form class=" col-sm-offset-4 col-sm-4 form-horizontal" role="form" method="post">
+    <canvas  id='myCanvas'  width="1000" height="1000"></canvas>
+    <div class="bm">
+        <a href="/pictureIntro">
+            <button type="back" class="btn">back</button>
+        </a>
+    </div>
+</form>
+<script type="text/javascript">
+
+
+    getImg('sqq',20);
+    function getImg(text,fsz){
+
+        var c = document.getElementById("myCanvas");
+        var cxt = c.getContext("2d");
+        var img = new Image();
+        img.src = '/images/<%=id%>';
+        img.onload=function(){//图片加载完成，才可处理
+            cxt.drawImage(img,0,0,1000,1000);
+            cxt.save();
+            cxt.font = fsz+"px Arial";
+            cxt.textBaseline = 'middle';//更改字号后，必须重置对齐方式，否则居中麻烦。设置文本的垂直对齐方式
+            cxt.textAlign = 'center';
+            var tw = cxt.measureText(text).width;
+            var ftop = c.height/2;
+            var fleft = c.width/2;
+            cxt.fillStyle="#ffffff";
+            cxt.fillRect(fleft-tw/2,ftop-fsz/2,tw,fsz);//矩形在画布居中方式
+            cxt.fillStyle="#088000";
+            cxt.fillText(text,fleft,ftop);//文本元素在画布居中方式
+            cxt.strokeStyle = 'yellow';
+            cxt.strokeText(text,fleft,ftop);//文字边框
+        };
+
+    }
+
+</script>
+</body>
+</html>
+
+
+
+
+<!--<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>addItem</title>
+<link rel="stylesheet" href="/stylesheets/additem.css">
+</head>
+
+<body>
+<form class=" col-sm-offset-4 col-sm-4 form-horizontal" role="form" method="post">
+    <div align="center">
+        <img src="/images/<%=id%>" width="300">
+
+    </div>
+    <div id="imgBox" align="center">
+        <input type="button" class="btn" value="一键合成" onClick="hecheng()">
+    </div>
+    <a href="/pictureIntro">
+        <button type="back" class="btn" id="back_btn">Back</button>
+    </a>
+</form>
+<script>
+
+function hecheng(){
+    console.log(document.getElementById('imgBox'));
+    var sourceImg = images(document.getElementById('imgBox'));
+    var sWidth = sourceImg.width();
+    var sHeight = sourceImg.height();
+    var wmWidth = watermarkImg.width();
+    var wmHeight = watermarkImg.height();
+	/*draw(function(){
+		document.getElementById('imgBox').innerHTML='<p style="padding:10px 0">合成图片成功！</p><img src="'+base64[0]+'">';
+	})	*/
+}
+
+/*var data=['../public/images/gintama.jpg','../public/images/zhenhun.jpg','../public/images/nazimie.jpeg','../public/images/yuri.jpg'],base64=[];
+function draw(fn){
+	var c=document.createElement('canvas'),
+		ctx=c.getContext('2d'),
+		len=data.length;
+	c.width=290;
+	c.height=290;
+	ctx.rect(0,0,c.width,c.height);
+	ctx.fillStyle='#fff';
+	ctx.fill();
+	function drawing(n){
+		if(n<len){
+			var img=new Image;
+			img.src=data[n];
+			img.onload=function(){
+				ctx.drawImage(img,0,0,290,290);
+				drawing(n+1);//递归
+			}
+		}else{
+			//保存生成作品图片
+			base64.push(c.toDataURL("image/jpeg",0.8));
+			fn();
+		}
+	}
+	drawing(0);
+}*/
+</script>
+</body>
+</html>
+-->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>aboutMore</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/pictureIntro.css">
+    <script src="/javascripts/jquery-3.3.1.min.js"></script>
+    <script id="users" type="text/template">
+
+    </script>
+
+</head>
+<body>
+<div class="bm">
+    <a href="/picview">
+        <button type="picview" class="btn" button onclick="pv()">picview</button>
+    </a>
+    <a href="/labeladd">
+        <button type="labeladd" class="btn" button onclick="la()">labeladd</button>
+    </a>
+    <a href="/picaddtime">
+        <button type="picaddtime" class="btn" button onclick="pat()">picaddtime</button>
+    </a>
+    <a href="/pictureIntro">
+        <button type="back" class="btn">back</button>
+    </a>
+</div>
+
+
+    <div class="container">
+
+        <div class="search">
+            <div class="col-sm-9">
+                <input type="text" class="form-control" id="labels" name="labels" placeholder="labels" required>
+            </div>
+            <a href="/searchLabel">
+                <button type="searchLabel" class="btn">searchLabel</button>
+            </a>
+
+        </div>
+        <div class="col-md-6">
+            <div id="rank">
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script>
+    $("#rank").prepend("<div class=\"bm\"><a href=\"/editPicture/1543939790091.jpg\"><img src=\"/images/1543939790091.jpg\" style=\"max-width: 100%;\"/></a></div>");
+
+    var s1="<div class=\"bm\"><a href=\"/editPicture/";
+    var s2="gintama.jpg";
+    var s3="\"><img src=\"/images/";
+    var s4="gintama.jpg";
+    var s5="\" style=\"max-width: 100%;\"/></a></div>";
+    var s=s1+s2+s3+s4+s5;
+    $("#rank").prepend(s);
+
+
+
+</script>
+
+</html>

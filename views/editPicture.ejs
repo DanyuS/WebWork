@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/stylesheets/cropper.css">
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <link rel="stylesheet" href="/stylesheets/editPicture.css">
+</head>
+<body>
+
+<h1><%= id %></h1>
+<div class="wrapper"  method="post">
+    <!--用块元素（容器）包装图像或画布元素-->
+    <div class="img-container">
+        <img id="image" src="/images/<%= id %>" alt="">
+    </div>
+    <div class="img-preview-container">
+        <h1>预览区域</h1>
+        <div class="img-preview">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="btn-container" id="move_container">
+        <div class="btn" data-movex="0" data-movey="-10">上移</div>
+        <div class="btn" data-movex="0" data-movey="10">下移</div>
+        <div class="btn" data-movex="-10" data-movey="0">左移</div>
+        <div class="btn" data-movex="10" data-movey="0">右移</div>
+    </div>
+    <div class="btn-container" id="zoom_container">
+        <div class="btn" data-zoom="0.1">放大</div>
+        <div class="btn" data-zoom="-0.1" data-movey="10">缩小</div>
+    </div>
+    <div class="btn-container" id="rotate_container">
+        <div class="btn" data-rotate="45">顺时针旋转</div>
+        <div class="btn" data-rotate="-45" data-movey="10">逆时针旋转</div>
+    </div>
+    <div class="btn-container" id="scale_container">
+        <div class="btn" data-scale="x">左右翻转</div>
+        <div class="btn" data-scale="y" data-movey="10">上下翻转</div>
+    </div>
+    <div class="btn-container">
+        <div class="btn" id="enable">取消冻结</div>
+        <div class="btn" id="disable">冻结</div>
+        <div class="btn" id="reset1">重置</div>
+        <div class="btn" id="clear">清空</div>
+        <div class="btn" id="destroy">销毁</div>
+        <!--<div class="btn">
+            <input class="input-upload" id="upload" type="file">上传图片</div>
+        </div>-->
+    </div>
+    <div class="btn-container">
+        <div class="btn" id="getCroppedCanvas">裁剪</div>
+    </div>
+    <form class=" col-sm-offset-4 col-sm-4 form-horizontal" role="form" method="post">
+        <div class="btn-container1">
+            <a href="/pictureIntro">
+                <button type="back" class="btn_back">返回</button>
+            </a>
+            <a href="/addLabel/<%= id %>">
+                <button type="label" class="btn_back">label</button>
+            </a>
+            <a href="/addItem/<%= id %>">
+                <button type="Item" class="btn_back">Item</button>
+            </a>
+        </div>
+    </form>
+    <img src="" id="test" width="500px" height="500px" alt="">
+<div class="fixed-canvas hiddle">
+    <div class="fixed-bg"></div>
+    <div class="canvas-container">
+        <h1>裁剪区域</h1>
+        <div class="canvas" id="canvas">
+        </div>
+        <div class="btn-container" id="modal_canvas_btn">
+            <a class="btn" href="javascript:;" >取消</a>
+            <a class="btn" id="download" href="javascript:;" download="/images/<%= id %>">下载</a>
+        </div>
+    </div>
+</div>
+</div>
+<script src="/javascripts/jquery-3.3.1.js"></script>
+<script src="/javascripts/cropper.js"></script>
+<script src="/javascripts/edit.js"></script>
+
+</body>
+</html>

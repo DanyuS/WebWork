@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>AddLabel</title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/addLabel.css" media="screen">
+</head>
+<body>
+
+
+<h1><%= id %></h1>
+
+
+
+<div class="container">
+    <div class="card">
+        <div class="header">
+
+        </div>
+
+        <div class="txt">
+        </div>
+        <!--<button onclick="click()">aaaaaaaaaaaa </button>-->
+        <form class=" col-sm-offset-4 col-sm-4 form-horizontal" role="form" method="post">
+                <div class="form-group">
+                    <div class="col-sm-9" for="pid">
+                        <img id="pid" name="pid" src="/images/<%= id %>" style="max-width: 100%;" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div id="rank">
+
+                    </div>
+
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="labels" name="labels" placeholder="labels" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+
+                        <button type="add" class="btn" id="add_btn" button onclick="al()">Add&Save</button>
+
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <a href="/pictureIntro">
+            <button type="back" class="btn" id="back_btn">Back</button>
+        </a>
+
+    </div>
+</div>
+</body>
+
+<script src="/javascripts/jquery-3.3.1.min.js"></script>
+
+<script>
+
+    /*$.ajax({ type: 'POST', url:'/addLabel/:id' }).done(function(results){
+        console.log(results);
+        //=>params
+    })*/
+
+
+</script>
+
+
+</html>

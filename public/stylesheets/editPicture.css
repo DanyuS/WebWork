@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+.btn-container .btn {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #7B68EE;
+    color: white;
+}
+
+.btn-container1 .btn_back {
+    background-color: #008CBA; /* Blue */
+    border: none;
+    color: white;
+    padding: 6px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn_back:hover {
+    background-color: #7B68EE;
+    color: white;
+}
